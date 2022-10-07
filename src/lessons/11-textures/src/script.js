@@ -6,6 +6,14 @@ import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
  * Textures
  */
 
+// When preparing textures, keep in mind weight, size (res), and data
+
+// Smaller textures better -> faster to load and smaller in data
+
+// Find right combination of texture formats + resolutions (jpg vs. pngs)
+
+// Where to find textures: poliigon.com, 3dtextures.me, arroway-textures.ch, Photoshop, Substance Designer
+
 // const image = new Image()
 // const texture = new THREE.Texture(image)
 
@@ -58,8 +66,11 @@ const roughnessTexture = textureLoader.load('/textures/door/roughness.jpg')
 
 // NearestFilter best for performance/framerate
 
+// NearestFilter on minFilter doesn't need mipmaps
+
 colorTexture.generateMipmaps = false
 colorTexture.minFilter = THREE.NearestFilter
+
 colorTexture.magFilter = THREE.NearestFilter
 
 /**
